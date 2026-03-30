@@ -1,0 +1,623 @@
+/* ~/.config/matugen/templates/obsidian.css */
+
+/* ================================================
+   OBSIDIAN - Material You Theme via Matugen
+   Auto-generated - do not edit manually
+   ================================================ */
+
+:root {
+  /* === Core Material You Palette === */
+  --mat-primary:              #adc6ff;
+  --mat-on-primary:           #102f60;
+  --mat-primary-container:    #2b4678;
+  --mat-on-primary-container: #d8e2ff;
+
+  --mat-secondary:              #bfc6dc;
+  --mat-on-secondary:           #293041;
+  --mat-secondary-container:    #3f4759;
+  --mat-on-secondary-container: #dbe2f9;
+
+  --mat-tertiary:              #debcdf;
+  --mat-on-tertiary:           #402843;
+  --mat-tertiary-container:    #583e5b;
+  --mat-on-tertiary-container: #fbd7fc;
+
+  --mat-error:              #ffb4ab;
+  --mat-on-error:           #690005;
+  --mat-error-container:    #93000a;
+  --mat-on-error-container: #ffdad6;
+
+  --mat-surface:                  #111318;
+  --mat-on-surface:               #e2e2e9;
+  --mat-surface-variant:          #44474f;
+  --mat-on-surface-variant:       #c4c6d0;
+  --mat-surface-container:        #1e1f25;
+  --mat-surface-container-low:    #1a1b20;
+  --mat-surface-container-high:   #282a2f;
+  --mat-surface-container-highest:#33353a;
+
+  --mat-outline:         #8e9099;
+  --mat-outline-variant: #44474f;
+  --mat-inverse-surface: #e2e2e9;
+  --mat-inverse-on-surface: #2f3036;
+  --mat-inverse-primary: #445e91;
+  --mat-scrim:           #000000;
+  --mat-shadow:          #000000;
+
+  /* ================================================
+     MAP MATERIAL YOU → OBSIDIAN CSS VARIABLES
+     ================================================ */
+
+  /* --- Backgrounds --- */
+  --background-primary:          #111318;
+  --background-primary-alt:      #1a1b20;
+  --background-secondary:        #1e1f25;
+  --background-secondary-alt:    #282a2f;
+  --background-modifier-border:  #44474f;
+  --background-modifier-form-field: #1e1f25;
+  --background-modifier-form-field-highlighted: #282a2f;
+  --background-modifier-box-shadow: rgba(rgb(0, 0, 0), 0.3);
+  --background-modifier-success:  #583e5b;
+  --background-modifier-error:    #93000a;
+  --background-modifier-error-rgb: rgb(255, 180, 171);
+  --background-modifier-cover:   rgba(rgb(0, 0, 0), 0.6);
+
+  /* --- Text Colors --- */
+  --text-normal:        #e2e2e9;
+  --text-muted:         #c4c6d0;
+  --text-faint:         #8e9099;
+  --text-on-accent:     #102f60;
+  --text-error:         #ffb4ab;
+  --text-success:       #debcdf;
+  --text-selection:     rgba(rgb(173, 198, 255), 0.3);
+  --text-accent:        #adc6ff;
+  --text-accent-hover:  #2b4678;
+
+  /* --- Interactive Elements --- */
+  --interactive-normal:   #1e1f25;
+  --interactive-hover:    #282a2f;
+  --interactive-accent:   #adc6ff;
+  --interactive-accent-rgb: rgb(173, 198, 255);
+  --interactive-accent-hover: #2b4678;
+  --interactive-success:  #debcdf;
+
+  /* --- Scrollbar --- */
+  --scrollbar-bg:     transparent;
+  --scrollbar-thumb-bg: #44474f;
+  --scrollbar-active-thumb-bg: #8e9099;
+}
+
+/* ================================================
+   WORKSPACE LAYOUT
+   ================================================ */
+
+/* Main workspace background */
+.workspace {
+  background-color: var(--mat-surface);
+}
+
+/* Left sidebar / file explorer */
+.workspace-split.mod-left-split .workspace-leaf-content {
+  background-color: var(--mat-surface-container-low);
+}
+
+/* Right sidebar */
+.workspace-split.mod-right-split .workspace-leaf-content {
+  background-color: var(--mat-surface-container-low);
+}
+
+/* Active leaf / note pane */
+.workspace-leaf.mod-active .workspace-leaf-content {
+  background-color: var(--mat-surface);
+}
+
+/* Tab headers */
+.workspace-tab-header {
+  background-color: var(--mat-surface-container);
+  color: var(--mat-on-surface-variant);
+  border-radius: 8px 8px 0 0;
+}
+
+.workspace-tab-header.is-active {
+  background-color: var(--mat-primary-container);
+  color: var(--mat-on-primary-container);
+}
+
+.workspace-tab-header:hover {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+}
+
+/* Tab header container */
+.workspace-tab-header-container {
+  background-color: var(--mat-surface-container-low);
+  border-bottom: 1px solid var(--mat-outline-variant);
+}
+
+/* ================================================
+   EDITOR - WRITING AREA
+   ================================================ */
+
+/* Editor container */
+.markdown-source-view,
+.cm-editor {
+  background-color: var(--mat-surface);
+  color: var(--mat-on-surface);
+}
+
+/* Editor active line highlight */
+.cm-active-line {
+  background-color: rgba(rgb(173, 198, 255), 0.05) !important;
+}
+
+/* Editor cursor */
+.cm-cursor {
+  border-left-color: var(--mat-primary) !important;
+}
+
+/* Selection highlight */
+.cm-selectionBackground,
+::selection {
+  background-color: rgba(rgb(173, 198, 255), 0.25) !important;
+}
+
+/* Line numbers */
+.cm-lineNumbers .cm-gutterElement {
+  color: var(--mat-outline);
+}
+
+/* Editor gutter */
+.cm-gutters {
+  background-color: var(--mat-surface-container-low);
+  border-right: 1px solid var(--mat-outline-variant);
+}
+
+/* ================================================
+   MARKDOWN ELEMENTS
+   ================================================ */
+
+/* Headings */
+.markdown-rendered h1,
+.HyperMD-header-1 {
+  color: var(--mat-primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--mat-outline-variant);
+  padding-bottom: 4px;
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2 {
+  color: var(--mat-secondary);
+  font-weight: 600;
+}
+
+.markdown-rendered h3,
+.HyperMD-header-3 {
+  color: var(--mat-tertiary);
+  font-weight: 600;
+}
+
+.markdown-rendered h4,
+.HyperMD-header-4 {
+  color: var(--mat-on-surface);
+  font-weight: 600;
+}
+
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  color: var(--mat-on-surface-variant);
+}
+
+/* Bold */
+.markdown-rendered strong,
+.cm-strong {
+  color: var(--mat-primary);
+  font-weight: 700;
+}
+
+/* Italic */
+.markdown-rendered em,
+.cm-em {
+  color: var(--mat-secondary);
+}
+
+/* Inline code */
+.markdown-rendered code,
+.cm-inline-code {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-tertiary);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+.markdown-rendered pre,
+pre.HyperMD-codeblock {
+  background-color: var(--mat-surface-container);
+  border: 1px solid var(--mat-outline-variant);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.markdown-rendered pre code {
+  background-color: transparent;
+  color: var(--mat-on-surface);
+  padding: 0;
+}
+
+/* Code block syntax highlighting overrides */
+.cm-s-obsidian .cm-keyword    { color: var(--mat-tertiary); }
+.cm-s-obsidian .cm-def        { color: var(--mat-primary); }
+.cm-s-obsidian .cm-string     { color: var(--mat-secondary); }
+.cm-s-obsidian .cm-number     { color: var(--mat-error); }
+.cm-s-obsidian .cm-comment    { color: var(--mat-outline); font-style: italic; }
+.cm-s-obsidian .cm-variable   { color: var(--mat-on-surface); }
+.cm-s-obsidian .cm-operator   { color: var(--mat-on-surface-variant); }
+
+/* Blockquotes */
+.markdown-rendered blockquote {
+  background-color: var(--mat-surface-container);
+  border-left: 4px solid var(--mat-primary);
+  border-radius: 0 8px 8px 0;
+  margin: 8px 0;
+  padding: 8px 16px;
+  color: var(--mat-on-surface-variant);
+}
+
+/* Horizontal rule */
+.markdown-rendered hr {
+  border-color: var(--mat-outline-variant);
+}
+
+/* Links */
+.markdown-rendered a,
+.cm-url,
+.cm-link {
+  color: var(--mat-primary);
+  text-decoration: none;
+}
+
+.markdown-rendered a:hover {
+  color: var(--mat-primary-container);
+  text-decoration: underline;
+}
+
+/* Internal links (wiki links) */
+.internal-link {
+  color: var(--mat-secondary) !important;
+}
+
+.internal-link:hover {
+  color: var(--mat-secondary-container) !important;
+}
+
+/* Unresolved links */
+.is-unresolved {
+  color: var(--mat-outline) !important;
+}
+
+/* Tags */
+.tag {
+  background-color: var(--mat-secondary-container);
+  color: var(--mat-on-secondary-container);
+  border-radius: 12px;
+  padding: 1px 8px;
+  font-size: 0.85em;
+  border: none;
+}
+
+.tag:hover {
+  background-color: var(--mat-secondary);
+  color: var(--mat-on-secondary);
+}
+
+/* Tables */
+.markdown-rendered table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-rendered th {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+  border: 1px solid var(--mat-outline-variant);
+  padding: 8px 12px;
+}
+
+.markdown-rendered td {
+  border: 1px solid var(--mat-outline-variant);
+  padding: 6px 12px;
+  color: var(--mat-on-surface);
+}
+
+.markdown-rendered tr:nth-child(even) td {
+  background-color: var(--mat-surface-container-low);
+}
+
+.markdown-rendered tr:hover td {
+  background-color: rgba(rgb(173, 198, 255), 0.08);
+}
+
+/* Checkboxes / Task list */
+.task-list-item-checkbox {
+  accent-color: var(--mat-primary);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--mat-primary);
+  border-color: var(--mat-primary);
+}
+
+/* ================================================
+   FILE EXPLORER (Left Sidebar)
+   ================================================ */
+
+/* File / folder items */
+.nav-file-title,
+.nav-folder-title {
+  color: var(--mat-on-surface-variant);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+}
+
+/* Active / selected file */
+.nav-file-title.is-active {
+  background-color: var(--mat-primary-container);
+  color: var(--mat-on-primary-container);
+  font-weight: 600;
+}
+
+/* Folder collapse arrow */
+.nav-folder-collapse-indicator {
+  color: var(--mat-outline);
+}
+
+/* File explorer header */
+.nav-header {
+  background-color: var(--mat-surface-container-low);
+}
+
+/* Search bar in file explorer */
+.search-input-container input {
+  background-color: var(--mat-surface-container);
+  color: var(--mat-on-surface);
+  border: 1px solid var(--mat-outline-variant);
+  border-radius: 8px;
+}
+
+.search-input-container input:focus {
+  border-color: var(--mat-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(rgb(173, 198, 255), 0.2);
+}
+
+/* ================================================
+   TITLEBAR & RIBBON
+   ================================================ */
+
+/* Titlebar */
+.titlebar {
+  background-color: var(--mat-surface-container-low);
+  border-bottom: 1px solid var(--mat-outline-variant);
+}
+
+/* Ribbon (leftmost icon bar) */
+.workspace-ribbon {
+  background-color: var(--mat-surface-container-low);
+  border-right: 1px solid var(--mat-outline-variant);
+}
+
+.workspace-ribbon .side-dock-ribbon-action {
+  color: var(--mat-on-surface-variant);
+  border-radius: 8px;
+}
+
+.workspace-ribbon .side-dock-ribbon-action:hover {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+}
+
+.workspace-ribbon .side-dock-ribbon-action.is-active {
+  color: var(--mat-primary);
+}
+
+/* ================================================
+   MODALS & POPUPS
+   ================================================ */
+
+/* Modal background overlay */
+.modal-bg {
+  background-color: rgba(rgb(0, 0, 0), 0.5);
+}
+
+/* Modal container */
+.modal {
+  background-color: var(--mat-surface-container);
+  border: 1px solid var(--mat-outline-variant);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(rgb(0, 0, 0), 0.4);
+}
+
+/* Modal title */
+.modal-title {
+  color: var(--mat-on-surface);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Quick switcher */
+.prompt {
+  background-color: var(--mat-surface-container);
+  border: 1px solid var(--mat-outline-variant);
+  border-radius: 12px;
+}
+
+.prompt-input {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+  border: 1px solid var(--mat-outline-variant);
+  border-radius: 8px;
+}
+
+.prompt-input:focus {
+  border-color: var(--mat-primary);
+  box-shadow: 0 0 0 2px rgba(rgb(173, 198, 255), 0.2);
+}
+
+.suggestion-item {
+  color: var(--mat-on-surface-variant);
+  border-radius: 6px;
+}
+
+.suggestion-item.is-selected {
+  background-color: var(--mat-primary-container);
+  color: var(--mat-on-primary-container);
+}
+
+.suggestion-item:hover {
+  background-color: var(--mat-surface-container-high);
+  color: var(--mat-on-surface);
+}
+
+/* ================================================
+   SETTINGS PANEL
+   ================================================ */
+
+.vertical-tab-nav-item {
+  color: var(--mat-on-surface-variant);
+  border-radius: 6px;
+}
+
+.vertical-tab-nav-item.is-active {
+  background-color: var(--mat-primary-container);
+  color: var(--mat-on-primary-container);
+}
+
+.vertical-tab-nav-item:hover {
+  background-color: var(--mat-surface-container-high);
+}
+
+/* Toggles */
+.checkbox-container.is-enabled {
+  background-color: var(--mat-primary);
+}
+
+/* Buttons in settings */
+.mod-cta {
+  background-color: var(--mat-primary);
+  color: var(--mat-on-primary);
+  border-radius: 8px;
+}
+
+.mod-cta:hover {
+  background-color: var(--mat-primary-container);
+  color: var(--mat-on-primary-container);
+}
+
+/* ================================================
+   STATUS BAR (bottom bar)
+   ================================================ */
+
+.status-bar {
+  background-color: var(--mat-surface-container-low);
+  border-top: 1px solid var(--mat-outline-variant);
+  color: var(--mat-on-surface-variant);
+  font-size: 11px;
+}
+
+.status-bar-item {
+  color: var(--mat-on-surface-variant);
+}
+
+.status-bar-item:hover {
+  color: var(--mat-on-surface);
+  background-color: var(--mat-surface-container);
+}
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--mat-outline-variant);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--mat-outline);
+}
+
+/* ================================================
+   GRAPH VIEW
+   ================================================ */
+
+.graph-view.color-fill          { color: var(--mat-primary); }
+.graph-view.color-fill-tag      { color: var(--mat-secondary); }
+.graph-view.color-fill-attachment { color: var(--mat-tertiary); }
+.graph-view.color-fill-unresolved { color: var(--mat-outline); }
+.graph-view.color-arrow         { color: var(--mat-outline-variant); }
+.graph-view.color-text          { color: var(--mat-on-surface); }
+.graph-view.color-line          { color: var(--mat-outline-variant); }
+
+/* ================================================
+   CALLOUTS
+   ================================================ */
+
+.callout {
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.callout[data-callout="note"] {
+  background-color: rgba(rgb(173, 198, 255), 0.1);
+  border-left: 4px solid var(--mat-primary);
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="hint"] {
+  background-color: rgba(rgb(222, 188, 223), 0.1);
+  border-left: 4px solid var(--mat-tertiary);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"] {
+  background-color: rgba(rgb(147, 0, 10), 0.2);
+  border-left: 4px solid var(--mat-error);
+}
+
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  background-color: rgba(rgb(255, 180, 171), 0.15);
+  border-left: 4px solid var(--mat-error);
+}
+
+.callout[data-callout="success"] {
+  background-color: rgba(rgb(222, 188, 223), 0.15);
+  border-left: 4px solid var(--mat-tertiary);
+}
+
+.callout-title {
+  color: var(--mat-on-surface);
+  font-weight: 600;
+}
+
+.callout-content {
+  color: var(--mat-on-surface-variant);
+}
+

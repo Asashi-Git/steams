@@ -1,0 +1,213 @@
+{
+  "main": {
+    "id": "46794ba2a2efa97a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4acbe16724d85ca5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9916d33b2979cfa0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "83c4539740d5d730",
+    "type": "split",
+    "children": [
+      {
+        "id": "300beccff1f35b98",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f974000c2220b86e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3edc8aa4ee218e78",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2c73a57cdcbeab22",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e6c38664f614c3c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "7a00fd7d24ac789d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "07684f3aab5dd765",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "d2b00632d9918d58",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "7ca5817910404c66",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "742650adc65fa621",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "011c3bde6ca7227a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "9916d33b2979cfa0",
+  "lastOpenFiles": [
+    "HomeLab/README.md",
+    "HomeLab/git-commands/README.md",
+    "HomeLab/vintage-story/README.md",
+    "HomeLab/vintage-story/vintagestory_server_cli_commands.md",
+    "HomeLab/vintage-story",
+    "HomeLab/physical-assets/README.md",
+    "HomeLab/vpn/README.md",
+    "HomeLab/vpn",
+    "HomeLab/git-commands",
+    "HomeLab/Physical-Assets.md",
+    "HomeLab/physical-assets/Physical-Assets.md",
+    "HomeLab/physical-assets",
+    "HomeLab/Network-introduction-of-my-HomeLab.md",
+    "HomeLab/HA-introduction-of-my-HomeLab.md",
+    "HomeLab/bastion/README.md",
+    "HomeLab/bastion/config/sshd/sshd_config",
+    "HomeLab/bastion/config/sshd",
+    "HomeLab/bastion/config/sshd_config",
+    "HomeLab/bastion/config/README.md",
+    "HomeLab/bastion/config",
+    "HomeLab/bastion/script/config.json",
+    "HomeLab/bastion/script/ssh_menu.py",
+    "HomeLab/HomeLab-Screenshot.md",
+    "HomeLab/HomeLab/bastion/README.md",
+    "HomeLab/HomeLab/README.md",
+    "HomeLab/HomeLab/Physical-resources-of-my-HomeLab.md",
+    "HomeLab/HomeLab/Network-introduction-of-my-HomeLab.md",
+    "HomeLab/HomeLab/HA-introduction-of-my-HomeLab.md",
+    "HomeLab/HomeLab/CONTRIBUTING.md",
+    "Welcome.md"
+  ]
+}
