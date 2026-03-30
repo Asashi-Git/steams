@@ -3,6 +3,9 @@
 ```bash
 .
 ├── configurations
+│   ├── apache
+│   ├── mariadb
+│   ├── nginx
 │   └── README.md
 ├── git-commands
 │   └── README.md
@@ -10,6 +13,9 @@
 ├── scripts
 │   └── README.md
 └── steams-documentations
+    ├── apache
+    ├── mariadb
+    ├── nginx
     └── README.md
 ```
 
