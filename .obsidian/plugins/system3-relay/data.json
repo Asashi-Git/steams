@@ -14,18 +14,6 @@
         "pdfs": true,
         "otherTypes": false
       }
-    },
-    {
-      "path": "steams-documentations",
-      "guid": "d93a566c-7d82-45b6-8902-e57d06622439",
-      "relay": "eecbb99c-3ae1-44c0-907f-a6f39552fed1",
-      "sync": {
-        "images": true,
-        "audio": true,
-        "videos": true,
-        "pdfs": true,
-        "otherTypes": false
-      }
     }
   ],
   "endpoints": {},

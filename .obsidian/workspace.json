@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d6b93eeb6849d122",
+        "id": "4acbe16724d85ca5",
         "type": "tabs",
         "children": [
           {
-            "id": "8459aa86682340f9",
+            "id": "9916d33b2979cfa0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "New tab"
             }
           }
         ]
@@ -182,43 +178,37 @@
       "system3-relay:Relay": false
     }
   },
-  "active": "8459aa86682340f9",
+  "active": "9916d33b2979cfa0",
   "lastOpenFiles": [
-    "steams-documentations/nginx/README.md~",
-    "steams-documentations/mariadb/README.md~",
-    "steams-documentations/apache/README.md~",
-    "configurations/nginx/README.md~",
-    "configurations/mariadb/README.md~",
-    "configurations/apache/README.md~",
-    "steams-documentations/nginx/README.md",
-    "steams-documentations/mariadb/README.md",
-    "steams-documentations/apache/README.md",
-    "configurations/nginx/README.md",
-    "configurations/mariadb/README.md",
-    "configurations/apache/README.md",
-    "steams-documentations/mariadb",
-    "steams-documentations/nginx",
-    "steams-documentations/apache",
-    "configurations/mariadb",
-    "configurations/nginx",
-    "scripts/README.md",
-    "configurations/README.md",
-    "steams-documentations/README.md",
-    "README.md",
-    "git-commands/README.md",
     "HomeLab/README.md",
     "HomeLab/git-commands/README.md",
     "HomeLab/vintage-story/README.md",
     "HomeLab/vintage-story/vintagestory_server_cli_commands.md",
+    "HomeLab/vintage-story",
     "HomeLab/physical-assets/README.md",
     "HomeLab/vpn/README.md",
+    "HomeLab/vpn",
+    "HomeLab/git-commands",
     "HomeLab/Physical-Assets.md",
     "HomeLab/physical-assets/Physical-Assets.md",
+    "HomeLab/physical-assets",
     "HomeLab/Network-introduction-of-my-HomeLab.md",
     "HomeLab/HA-introduction-of-my-HomeLab.md",
     "HomeLab/bastion/README.md",
+    "HomeLab/bastion/config/sshd/sshd_config",
+    "HomeLab/bastion/config/sshd",
+    "HomeLab/bastion/config/sshd_config",
     "HomeLab/bastion/config/README.md",
+    "HomeLab/bastion/config",
+    "HomeLab/bastion/script/config.json",
+    "HomeLab/bastion/script/ssh_menu.py",
     "HomeLab/HomeLab-Screenshot.md",
-    "HomeLab/HomeLab/bastion/README.md"
+    "HomeLab/HomeLab/bastion/README.md",
+    "HomeLab/HomeLab/README.md",
+    "HomeLab/HomeLab/Physical-resources-of-my-HomeLab.md",
+    "HomeLab/HomeLab/Network-introduction-of-my-HomeLab.md",
+    "HomeLab/HomeLab/HA-introduction-of-my-HomeLab.md",
+    "HomeLab/HomeLab/CONTRIBUTING.md",
+    "Welcome.md"
   ]
 }
