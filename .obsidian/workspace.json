@@ -174,11 +174,15 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "system3-relay:Relay": false
     }
   },
   "active": "9916d33b2979cfa0",
   "lastOpenFiles": [
+    "steams-documentations/README.md~",
+    "steams-documentations/README.md",
+    "steams-documentations",
     "HomeLab/README.md",
     "HomeLab/git-commands/README.md",
     "HomeLab/vintage-story/README.md",
@@ -200,7 +204,6 @@
     "HomeLab/bastion/config/README.md",
     "HomeLab/bastion/config",
     "HomeLab/bastion/script/config.json",
-    "HomeLab/bastion/script/ssh_menu.py",
     "HomeLab/HomeLab-Screenshot.md",
     "HomeLab/HomeLab/bastion/README.md",
     "HomeLab/HomeLab/README.md",
