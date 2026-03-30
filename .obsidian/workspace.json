@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4acbe16724d85ca5",
+        "id": "d6b93eeb6849d122",
         "type": "tabs",
         "children": [
           {
-            "id": "9916d33b2979cfa0",
+            "id": "8459aa86682340f9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -178,10 +182,17 @@
       "system3-relay:Relay": false
     }
   },
-  "active": "9916d33b2979cfa0",
+  "active": "8459aa86682340f9",
   "lastOpenFiles": [
+    "scripts/README.md",
     "steams-documentations/README.md~",
+    "configurations/README.md",
     "steams-documentations/README.md",
+    "README.md",
+    "README.md~",
+    "configurations",
+    "scripts",
+    "git-commands/README.md",
     "steams-documentations",
     "HomeLab/README.md",
     "HomeLab/git-commands/README.md",
@@ -199,11 +210,7 @@
     "HomeLab/HA-introduction-of-my-HomeLab.md",
     "HomeLab/bastion/README.md",
     "HomeLab/bastion/config/sshd/sshd_config",
-    "HomeLab/bastion/config/sshd",
-    "HomeLab/bastion/config/sshd_config",
     "HomeLab/bastion/config/README.md",
-    "HomeLab/bastion/config",
-    "HomeLab/bastion/script/config.json",
     "HomeLab/HomeLab-Screenshot.md",
     "HomeLab/HomeLab/bastion/README.md",
     "HomeLab/HomeLab/README.md",
