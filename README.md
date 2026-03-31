@@ -5,7 +5,34 @@
 ```bash
 .
 ├── code
-│   └── README.md
+│   ├── config
+│   │   └── database.php
+│   ├── controllers
+│   │   └── AuthController.php
+│   ├── index.php
+│   ├── models
+│   │   └── Database.php
+│   ├── public
+│   │   ├── css
+│   │   │   └── style.css
+│   │   └── js
+│   │       └── likes.js
+│   ├── README.md
+│   ├── sources
+│   ├── sql
+│   │   └── steams.sql
+│   ├── templates
+│   └── views
+│       ├── admin
+│       │   └── critiques.php
+│       ├── auth
+│       │   └── login.php
+│       ├── critiques
+│       │   └── listing.php
+│       ├── dashboard
+│       │   └── index.php
+│       └── layout
+│           └── header.php
 ├── configurations
 │   ├── apache
 │   │   └── README.md
