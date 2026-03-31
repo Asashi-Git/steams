@@ -4,6 +4,8 @@
 
 ```bash
 .
+├── code
+│   └── README.md
 ├── configurations
 │   ├── apache
 │   │   └── README.md
@@ -14,6 +16,7 @@
 │   └── README.md
 ├── git-commands
 │   └── README.md
+├── projet_btc_revieweo.pdf
 ├── README.md
 ├── scripts
 │   └── README.md
