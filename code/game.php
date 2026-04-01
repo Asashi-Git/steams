@@ -36,6 +36,9 @@ if (isset($_SESSION['user'])) {
     }
 }
 
-// --- Pass everything to the view
+// --- Layout + view
+$pageTitle = htmlspecialchars($game['title']) . ' — Revieweo';
+require_once __DIR__ . '/views/layout/header.php';
 require_once __DIR__ . '/views/game.php';
+require_once __DIR__ . '/views/layout/footer.php';
 
