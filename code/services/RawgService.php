@@ -4,17 +4,16 @@ class RawgService
 {
     private string $apiKey;
     private string $baseUrl = "https://api.rawg.io/api";
-    private int $timeout = 5;
+    private int    $timeout = 5;
 
     public function __construct()
     {
-        $config = require __DIR__ . '/../config/api.php';
+        $config       = require __DIR__ . '/../config/api.php';
         $this->apiKey = $config['rawg_key'];
     }
 
     /**
      * Search games by name.
-     * Returns an array of results, or throws a RuntimeException on failure.
      */
     public function searchGames(string $query, int $pageSize = 10): array
     {
@@ -31,6 +30,36 @@ class RawgService
         $response = $this->fetch($url);
 
         return $response['results'] ?? [];
+    }
+
+    /**
+     * Fetch a single game's full details by its RAWG id.
+     */
+    public function getGameById(int $rawgId): ?array
+    {
+        $url = $this->baseUrl . "/games/" . $rawgId . "?key=" . $this->apiKey;
+
+        try {
+            $data = $this->fetch($url);
+        } catch (RuntimeException $e) {
+            return null;
+        }
+
+        return $this->formatGame($data);
+    }
+
+    /**
+     * Normalize a raw RAWG payload into your DB structure.
+     */
+    public function formatGame(array $raw): array
+    {
+        return [
+            'rawg_id'      => $raw['id']                      ?? null,
+            'title'        => $raw['name']                    ?? 'Unknown',
+            'description'  => strip_tags($raw['description_raw'] ?? ''),
+            'release_date' => $raw['released']                ?? null,
+            'cover_image'  => $raw['background_image']        ?? null,
+        ];
     }
 
     /**

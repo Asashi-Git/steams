@@ -15,7 +15,8 @@ CREATE TABLE `roles` (
 );
 
 CREATE TABLE `games` ( 
-	`id_game` integer PRIMARY KEY AUTO_INCREMENT, 
+	`id_game` integer PRIMARY KEY AUTO_INCREMENT,
+	`rawg_id` integer UNIQUE, 
 	`title` varchar(255) NOT NULL, 
 	`description` text, 
 	`release_date` date, 

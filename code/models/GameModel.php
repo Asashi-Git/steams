@@ -12,7 +12,7 @@ class GameModel
     }
 
     /**
-     * Fetch all games, ordered by title.
+     * Return every game stored locally.
      */
     public function findAll(): array
     {
@@ -21,7 +21,7 @@ class GameModel
     }
 
     /**
-     * Fetch a single game by its ID.
+     * Find a game by its local primary key.
      */
     public function findById(int $id): array|false
     {
@@ -31,42 +31,36 @@ class GameModel
     }
 
     /**
-     * Fetch a game with its categories and platforms.
+     * Find a game already stored locally by its RAWG id.
      */
-    public function findWithDetails(int $id): array|false
+    public function findByRawgId(int $rawgId): array|false
     {
-        $stmt = $this->db->prepare("
-            SELECT
-                g.*,
-                GROUP_CONCAT(DISTINCT c.name ORDER BY c.name SEPARATOR ', ') AS categories,
-                GROUP_CONCAT(DISTINCT p.name ORDER BY p.name SEPARATOR ', ') AS platforms
-            FROM games g
-            LEFT JOIN belongs       b  ON b.id_game      = g.id_game
-            LEFT JOIN categories    c  ON c.id_category  = b.id_category
-            LEFT JOIN available_on  ao ON ao.id_game     = g.id_game
-            LEFT JOIN platforms     p  ON p.id_platform  = ao.id_platform
-            WHERE g.id_game = :id
-            GROUP BY g.id_game
-        ");
-        $stmt->execute([':id' => $id]);
+        $stmt = $this->db->prepare(
+            "SELECT * FROM games WHERE rawg_id = :rawg_id"
+        );
+        $stmt->execute([':rawg_id' => $rawgId]);
         return $stmt->fetch();
     }
 
     /**
      * Insert a game coming from the RAWG API.
+     * Returns the new local id_game.
      */
-    public function createFromApi(string $title, ?string $description, ?string $releaseDate, ?string $coverImage): int
+    public function createFromApi(array $formatted): int
     {
         $stmt = $this->db->prepare("
-            INSERT INTO games (title, description, release_date, cover_image)
-            VALUES (:title, :description, :release_date, :cover_image)
+            INSERT INTO games (rawg_id, title, description, release_date, cover_image)
+            VALUES (:rawg_id, :title, :description, :release_date, :cover_image)
         ");
+
         $stmt->execute([
-            ':title'        => $title,
-            ':description'  => $description,
-            ':release_date' => $releaseDate,
-            ':cover_image'  => $coverImage
+            ':rawg_id'      => $formatted['rawg_id'],
+            ':title'        => $formatted['title'],
+            ':description'  => $formatted['description'],
+            ':release_date' => $formatted['release_date'],
+            ':cover_image'  => $formatted['cover_image'],
         ]);
+
         return (int) $this->db->lastInsertId();
     }
 }
