@@ -1,22 +1,24 @@
 <?php
-$pageTitle = 'Login — Revieweo';
+$pageTitle = 'Register — Revieweo';
 require_once __DIR__ . '/../../views/layout/header.php';
 ?>
 
 <div class="row justify-content-center">
     <div class="col-md-5">
 
-        <h2 class="mb-4 text-center">Sign in</h2>
+        <h2 class="mb-4 text-center">Create an account</h2>
 
         <?php if (!empty($error)): ?>
             <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
-        <?php if (isset($_GET['registered'])): ?>
-            <div class="alert alert-success">Account created. You can now sign in.</div>
-        <?php endif; ?>
+        <form method="POST" action="/auth.php?action=register">
 
-        <form method="POST" action="/auth.php?action=login">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" required
+                       value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
+            </div>
 
             <div class="mb-3">
                 <label class="form-label">Email</label>
@@ -29,12 +31,17 @@ require_once __DIR__ . '/../../views/layout/header.php';
                 <input type="password" name="password" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+            <div class="mb-3">
+                <label class="form-label">Confirm password</label>
+                <input type="password" name="confirm" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Create account</button>
 
         </form>
 
         <p class="mt-3 text-center">
-            No account yet? <a href="/auth.php?action=register">Create one</a>
+            Already have an account? <a href="/auth.php?action=login">Sign in</a>
         </p>
 
     </div>
