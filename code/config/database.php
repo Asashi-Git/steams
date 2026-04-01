@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'host'    => 'school-database-1.homelab.local',
+    'host'    => '192.168.80.35',
     'dbname'  => 'steams_db',
     'user'    => 'dbadmin',
     'pass'    => 'caca',

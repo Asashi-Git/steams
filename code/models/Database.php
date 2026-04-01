@@ -31,11 +31,10 @@ class Database
             } catch (PDOException $e) {
                 // Never expose the real error to the browser in production
                 error_log("Database connection failed: " . $e->getMessage());
-                throw new RuntimeException("Database connection failed.");
+                throw new RuntimeException("Database connection failed " . $e->getMessage());
             }
         }
 
         return self::$instance;
     }
 }
-

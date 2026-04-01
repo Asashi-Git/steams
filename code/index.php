@@ -4,12 +4,22 @@ require_once __DIR__ . '/services/RawgService.php';
 require_once __DIR__ . '/models/Database.php';
 require_once __DIR__ . '/models/GameModel.php';
 
+/* try { */
+/*     $gameModel = new GameModel(); */
+/*     $games     = $gameModel->findAll(); */
+/* } catch (RuntimeException $e) { */
+/*     $dbError = "Cannot reach the database."; */
+/* } */
+
 try {
     $gameModel = new GameModel();
     $games     = $gameModel->findAll();
 } catch (RuntimeException $e) {
-    $dbError = "Cannot reach the database.";
+    $dbError = $e->getMessage();
+} catch (PDOException $e) {
+    $dbError = $e->getMessage();
 }
+
 
 $results = [];
 $error   = null;
@@ -112,4 +122,3 @@ if (isset($_GET['q']) && !empty(trim($_GET['q']))) {
 
 </body>
 </html>
-
