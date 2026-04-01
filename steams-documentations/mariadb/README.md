@@ -4,7 +4,7 @@
 
 The CDM defines business entities and their semantic interactions, without any technical constraints related to the database engine.
 
-![](../../screenshot_2026-03-31_19-02-56.png)
+![](screenshot_2026-03-31_19-02-56.png)
 
 > [!NOTE] Asymmetric Logic of Cardinalities
 > Dependency analysis has helped secure the application logic:
@@ -17,7 +17,7 @@ The CDM defines business entities and their semantic interactions, without any t
 
 The LDM is the technical translation of the CDM. It paves the way for the DDL (Data Definition Language) script by introducing the concepts of primary keys (PK), foreign keys (FK), and data types.
 
-![](../../screenshot_2026-03-31_19-02-25.png)
+![](screenshot_2026-03-31_19-02-25.png)
 
 > [!IMPORTANT] Resolution of Complex Relationships
 > The Many-to-Many relationships from the CDM (*Available on* and *Belongs*) have been canonically transformed into junction tables in the LDM (`available_on` and `belongs`).
