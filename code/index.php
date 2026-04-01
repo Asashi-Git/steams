@@ -1,6 +1,15 @@
 <?php
 
 require_once __DIR__ . '/services/RawgService.php';
+require_once __DIR__ . '/models/Database.php';
+require_once __DIR__ . '/models/GameModel.php';
+
+try {
+    $gameModel = new GameModel();
+    $games     = $gameModel->findAll();
+} catch (RuntimeException $e) {
+    $dbError = "Cannot reach the database.";
+}
 
 $results = [];
 $error   = null;
@@ -35,6 +44,7 @@ if (isset($_GET['q']) && !empty(trim($_GET['q']))) {
         .card img   { width: 100%; height: 160px; object-fit: cover; }
         .card-body  { padding: 12px; }
         .no-image   { height: 160px; background: #eee; display: flex; align-items: center; justify-content: center; color: #999; }
+        .separator  { border: none; border-top: 2px solid #eee; margin: 40px 0; }
     </style>
 </head>
 <body>
@@ -55,6 +65,25 @@ if (isset($_GET['q']) && !empty(trim($_GET['q']))) {
     <?php if ($error): ?>
         <p class="error"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
+
+    <!-- ===== DATABASE SECTION ===== -->
+    <hr class="separator">
+    <h2>Jeux en base de données</h2>
+
+    <?php if (!empty($games)): ?>
+        <ul>
+            <?php foreach ($games as $game): ?>
+                <li><?= htmlspecialchars($game['title']) ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php elseif (isset($dbError)): ?>
+        <p style="color:red"><?= $dbError ?></p>
+    <?php else: ?>
+        <p>Aucun jeu en base de données pour le moment.</p>
+    <?php endif; ?>
+
+    <!-- ===== RAWG API SECTION ===== -->
+    <hr class="separator">
 
     <?php if (!empty($results)): ?>
         <p>Résultats pour : <strong><?= htmlspecialchars($query) ?></strong></p>
