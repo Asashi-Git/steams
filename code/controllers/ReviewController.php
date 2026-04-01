@@ -21,7 +21,7 @@ $idGame   = isset($_POST['id_game'])  ? (int)   $_POST['id_game']           : 0;
 $title    = isset($_POST['title'])    ? trim($_POST['title'])                : '';
 $content  = isset($_POST['content'])  ? trim($_POST['content'])              : '';
 $notation = isset($_POST['notation']) ? (int)   $_POST['notation']          : 0;
-$idUser   = (int) $_SESSION['user']['id_user'];
+$idUser   = (int) $_SESSION['user']['id'];
 
 // --- Validate inputs
 $errors = [];
