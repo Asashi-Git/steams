@@ -29,6 +29,8 @@ The LDM is the technical translation of the CDM. It paves the way for the DDL (D
 > **Integrity constraint**: These junction tables use a composite primary key (the strict union of `id_game` and `id_platform` / `id_category`). This prevents any logical attack or API error attempting to link the same category to the same game multiple times.
 
 
-> [!NOTE] Official References
+> [!NOTE] 
+> **Official References**
 > - [DBML (Database Markup Language) Documentation](https://dbml.org/docs/)
 > - [MariaDB: InnoDB Foreign Key Constraints](https://mariadb.com/kb/en/innodb-foreign-key-constraints/)
+
