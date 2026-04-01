@@ -85,7 +85,7 @@ try {
     $_SESSION['form_success'] = "Your review has been published.";
 
 } catch (PDOException $e) {
-    $_SESSION['form_errors'] = ["A database error occurred. Please try again."];
+    $_SESSION['form_errors'] = ["A database error occurred. Error: " . $e->getMessage()];
 }
 
 // --- Redirect back to the game page
