@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($action === 'delete_own_review' && $user['id_role'] === 2) {
-        $controller->deleteOwnReview((int)$_POST['id_review'], (int)$user['id_user']);
+        $controller->deleteOwnReview((int)$_POST['id_review'], (int)$user['id']);
     }
 
     header("Location: /dashboard.php");
@@ -45,7 +45,7 @@ if ($user['id_role'] === 1) {
     require_once __DIR__ . '/views/layout/header.php';
     require_once __DIR__ . '/views/dashboard/admin.php';
 } else {
-    $myReviews = $controller->getMyReviews((int)$user['id_user']);
+    $myReviews = $controller->getMyReviews((int)$user['id']);
     $pageTitle = 'My Dashboard — Revieweo';
     require_once __DIR__ . '/views/layout/header.php';
     require_once __DIR__ . '/views/dashboard/critic.php';
