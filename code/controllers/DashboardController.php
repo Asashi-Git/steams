@@ -81,10 +81,11 @@ class DashboardController
         $stmt = $this->db->prepare("
             DELETE FROM likes 
             WHERE id_game IN (
-                SELECT id_game FROM reviews WHERE id_user = :id
+                SELECT id_game FROM reviews WHERE id_user = :id_review
             )
+            AND id_user = :id_like
         ");
-        $stmt->execute([':id' => $idUser]);
+        $stmt->execute([':id_review' => $idUser, ':id_like' => $idUser]);
 
         // 2. Delete the user's own likes
         $stmt = $this->db->prepare("DELETE FROM likes WHERE id_user = :id");
