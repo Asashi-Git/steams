@@ -79,4 +79,50 @@ class GameModel
         ");
         return $stmt->fetchAll();
     }
+
+    /**
+    * Count likes for a given game.
+    */
+    public function countLikes(int $gameId): int
+    {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) FROM likes WHERE id_game = :id_game
+        ");
+        $stmt->execute([':id_game' => $gameId]);
+        return (int) $stmt->fetchColumn();
+    }
+
+    /**
+    * Return true if the user has already liked this game.
+    */
+    public function hasLiked(int $userId, int $gameId): bool
+    {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) FROM likes
+            WHERE id_user = :id_user AND id_game = :id_game
+        ");
+        $stmt->execute([':id_user' => $userId, ':id_game' => $gameId]);
+        return (bool) $stmt->fetchColumn();
+    }
+
+    /**
+    * Toggle like: insert if absent, delete if present.
+    * Returns true if the like was added, false if removed.
+    */
+    public function toggleLike(int $userId, int $gameId): bool
+    {
+        if ($this->hasLiked($userId, $gameId)) {
+            $stmt = $this->db->prepare("
+                DELETE FROM likes WHERE id_user = :id_user AND id_game = :id_game
+            ");
+            $stmt->execute([':id_user' => $userId, ':id_game' => $gameId]);
+            return false;
+        }
+
+        $stmt = $this->db->prepare("
+            INSERT INTO likes (id_user, id_game) VALUES (:id_user, :id_game)
+        ");
+        $stmt->execute([':id_user' => $userId, ':id_game' => $gameId]);
+        return true;
+    }
 }
