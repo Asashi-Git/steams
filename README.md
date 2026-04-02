@@ -56,7 +56,8 @@
 │   └── complete-code
 ├── git-commands
 │   └── README.md
-├── projet_btc_revieweo.pdf
+├── pdf
+│   └── projet_btc_revieweo.pdf
 ├── README.md
 └── steams-documentations
     ├── apache
@@ -67,6 +68,6 @@
     │   └── screenshot_2026-03-31_19-02-56.png
     └── README.md
 
-24 directories, 39 files
+25 directories, 39 files
 ```
 
