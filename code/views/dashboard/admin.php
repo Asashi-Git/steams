@@ -39,9 +39,8 @@
                             <span class="text-muted">—</span>
                         <?php endif; ?>
                     </td>
-                    <td><?= htmlspecialchars($review['created_at']) ?></td>
+                    <td><?= htmlspecialchars($review['creation_date']) ?></td>
                     <td class="d-flex gap-1">
-                        <!-- Pin / Unpin -->
                         <form method="POST" action="/dashboard.php">
                             <input type="hidden" name="action"    value="pin_review">
                             <input type="hidden" name="id_review" value="<?= (int)$review['id_review'] ?>">
@@ -49,7 +48,6 @@
                                 <?= $review['pinned'] ? 'Unpin' : 'Pin' ?>
                             </button>
                         </form>
-                        <!-- Delete -->
                         <form method="POST" action="/dashboard.php"
                               onsubmit="return confirm('Delete this review?')">
                             <input type="hidden" name="action"    value="delete_review">
@@ -92,15 +90,26 @@
                             <?= htmlspecialchars($u['role_title']) ?>
                         </span>
                     </td>
-                    <td>
-                        <!-- Prevent admin from deleting themselves -->
-                        <?php if ((int)$u['id_user'] !== (int)$_SESSION['user']['id']): ?>
-                        <form method="POST" action="/dashboard.php"
-                              onsubmit="return confirm('Delete this user and all their reviews?')">
-                            <input type="hidden" name="action"  value="delete_user">
-                            <input type="hidden" name="id_user" value="<?= (int)$u['id_user'] ?>">
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+                    <td class="d-flex gap-1">
+                        <?php if ((int)$u['id_user'] !== (int)$_SESSION['user']['id_user']): ?>
+                            <!-- Change role -->
+                            <form method="POST" action="/dashboard.php">
+                                <input type="hidden" name="action"  value="change_role">
+                                <input type="hidden" name="id_user" value="<?= (int)$u['id_user'] ?>">
+                                <select name="id_role" class="form-select form-select-sm d-inline w-auto">
+                                    <option value="1" <?= $u['id_role'] == 1 ? 'selected' : '' ?>>Admin</option>
+                                    <option value="2" <?= $u['id_role'] == 2 ? 'selected' : '' ?>>Critic</option>
+                                    <option value="3" <?= $u['id_role'] == 3 ? 'selected' : '' ?>>User</option>
+                                </select>
+                                <button class="btn btn-secondary btn-sm">Save</button>
+                            </form>
+                            <!-- Delete user -->
+                            <form method="POST" action="/dashboard.php"
+                                  onsubmit="return confirm('Delete this user and all their reviews?')">
+                                <input type="hidden" name="action"  value="delete_user">
+                                <input type="hidden" name="id_user" value="<?= (int)$u['id_user'] ?>">
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
                         <?php else: ?>
                             <span class="text-muted">You</span>
                         <?php endif; ?>

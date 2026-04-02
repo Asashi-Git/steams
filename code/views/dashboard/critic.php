@@ -28,7 +28,7 @@
                     <td>
                         <span class="badge bg-primary"><?= (int)$review['notation'] ?>/10</span>
                     </td>
-                    <td><?= htmlspecialchars($review['created_at']) ?></td>
+                    <td><?= htmlspecialchars($review['creation_date']) ?></td>
                     <td>
                         <form method="POST" action="/dashboard.php"
                               onsubmit="return confirm('Delete this review?')">
