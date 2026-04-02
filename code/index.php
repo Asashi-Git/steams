@@ -9,7 +9,7 @@ require_once __DIR__ . '/models/GameModel.php';
 // --- Database: load all saved games
 try {
     $gameModel = new GameModel();
-    $games     = $gameModel->findAll();
+    $games     = $gameModel->findAllWithStats();
 } catch (RuntimeException $e) {
     $dbError = $e->getMessage();
 } catch (PDOException $e) {
@@ -101,23 +101,64 @@ require_once __DIR__ . '/views/layout/header.php';
 
 <!-- ===== SAVED GAMES IN DATABASE ===== -->
 <hr class="my-5">
-<h2 class="fw-bold mb-3">Games in database</h2>
+<h2 class="fw-bold mb-4">Games in database</h2>
 
 <?php if (!empty($games)): ?>
-    <ul class="list-group">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <?php foreach ($games as $game): ?>
-            <li class="list-group-item">
-                <a href="game.php?rawg_id=<?= (int)$game['rawg_id'] ?>">
-                    <?= htmlspecialchars($game['title']) ?>
+            <div class="col">
+                <a
+                    href="game.php?rawg_id=<?= (int)$game['rawg_id'] ?>"
+                    class="text-decoration-none text-dark"
+                >
+                    <div class="card h-100 shadow-sm">
+
+                        <?php if (!empty($game['cover_image'])): ?>
+                            <img
+                                src="<?= htmlspecialchars($game['cover_image']) ?>"
+                                class="card-img-top"
+                                style="height:160px; object-fit:cover;"
+                                alt="<?= htmlspecialchars($game['title']) ?>"
+                            />
+                        <?php else: ?>
+                            <div class="bg-secondary text-white d-flex align-items-center
+                                        justify-content-center" style="height:160px;">
+                                No image
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">
+                                <?= htmlspecialchars($game['title']) ?>
+                            </h5>
+
+                            <?php if ($game['review_count'] > 0): ?>
+                                <p class="card-text small mb-0">
+                                    Community score:
+                                    <strong class="text-warning">
+                                        <?= $game['avg_score'] ?> / 10
+                                    </strong>
+                                </p>
+                                <p class="card-text small text-muted">
+                                    <?= (int)$game['review_count'] ?> review<?= $game['review_count'] > 1 ? 's' : '' ?>
+                                </p>
+                            <?php else: ?>
+                                <p class="card-text small text-muted">No reviews yet</p>
+                            <?php endif; ?>
+                        </div>
+
+                    </div>
                 </a>
-            </li>
+            </div>
         <?php endforeach; ?>
-    </ul>
+    </div>
+
 <?php elseif (isset($dbError)): ?>
     <div class="alert alert-danger"><?= htmlspecialchars($dbError) ?></div>
 <?php else: ?>
     <p class="text-muted">No games in the database yet.</p>
 <?php endif; ?>
+
 
 <?php require_once __DIR__ . '/views/layout/footer.php'; ?>
 
