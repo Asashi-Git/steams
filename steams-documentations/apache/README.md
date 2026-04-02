@@ -77,7 +77,7 @@ Apache uses modular architecture. Enabled modules include:
 ```
 - Denies access to entire filesystem by default.
 
-### Web Directory السماح
+### Web Directory
 ```
 <Directory "/srv/http">
     Options Indexes FollowSymLinks
