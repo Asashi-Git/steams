@@ -52,9 +52,15 @@ class DashboardController
 
     public function deleteReview(int $idReview): void
     {
-        // Delete associated likes first
-        $stmt = $this->db->prepare("DELETE FROM likes WHERE id_review = :id");
+        // Fetch the associated id_game first
+        $stmt = $this->db->prepare("SELECT id_game FROM reviews WHERE id_review = :id");
         $stmt->execute([':id' => $idReview]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row) {
+            $stmt = $this->db->prepare("DELETE FROM likes WHERE id_game = :id_game");
+            $stmt->execute([':id_game' => $row['id_game']]);
+        }
 
         // Then delete the review
         $stmt = $this->db->prepare("DELETE FROM reviews WHERE id_review = :id");
@@ -74,8 +80,8 @@ class DashboardController
         // 1. Delete likes ON the user's reviews
         $stmt = $this->db->prepare("
             DELETE FROM likes 
-            WHERE id_review IN (
-            SELECT id_review FROM reviews WHERE id_user = :id
+            WHERE id_game IN (
+                SELECT id_game FROM reviews WHERE id_user = :id
             )
         ");
         $stmt->execute([':id' => $idUser]);
