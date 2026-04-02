@@ -5,11 +5,22 @@ session_start();
 require_once __DIR__ . '/services/RawgService.php';
 require_once __DIR__ . '/models/Database.php';
 require_once __DIR__ . '/models/GameModel.php';
+require_once __DIR__ . '/controllers/GameController.php';
 
 // --- Database: load all saved games
 try {
-    $gameModel = new GameModel();
-    $games     = $gameModel->findAllWithStats();
+    $gameModel      = new GameModel();
+    $gameController = new GameController();
+    $games          = $gameModel->findAllWithStats();
+
+    // Attach like count to each game, then sort descending
+    foreach ($games as &$game) {
+        $game['like_count'] = $gameController->getLikeCount((int)$game['id_game']);
+    }
+    unset($game);
+
+    usort($games, fn($a, $b) => $b['like_count'] <=> $a['like_count']);
+
 } catch (RuntimeException $e) {
     $dbError = $e->getMessage();
 } catch (PDOException $e) {
