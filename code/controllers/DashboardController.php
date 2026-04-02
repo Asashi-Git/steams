@@ -15,12 +15,12 @@ class DashboardController
     public function getMyReviews(int $idUser): array
     {
         $stmt = $this->db->prepare("
-            SELECT r.id_review, r.title, r.notation, r.created_at,
+            SELECT r.id_review, r.title, r.notation, r.creation_date,
                    g.title AS game_title, g.rawg_id
             FROM reviews r
             JOIN games g ON g.id_game = r.id_game
             WHERE r.id_user = :id_user
-            ORDER BY r.created_at DESC
+            ORDER BY r.creation_date DESC
         ");
         $stmt->execute([':id_user' => $idUser]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,13 +30,13 @@ class DashboardController
     public function getAllReviews(): array
     {
         $stmt = $this->db->query("
-            SELECT r.id_review, r.title, r.notation, r.created_at, r.pinned,
+            SELECT r.id_review, r.title, r.notation, r.creation_date, r.pinned,
                    g.title AS game_title, g.rawg_id,
                    u.username
             FROM reviews r
             JOIN games g ON g.id_game = r.id_game
             JOIN users u ON u.id_user = r.id_user
-            ORDER BY r.pinned DESC, r.created_at DESC
+            ORDER BY r.pinned DESC, r.creation_date DESC
         ");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
