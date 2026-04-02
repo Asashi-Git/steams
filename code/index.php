@@ -151,7 +151,7 @@ require_once __DIR__ . '/views/layout/header.php';
 
                             <?php if ($game['review_count'] > 0): ?>
                                 <p class="card-text small mb-0">
-                                    Community score:
+                                    Reviewer score:
                                     <strong class="text-warning">
                                         <?= $game['avg_score'] ?> / 10
                                     </strong>
