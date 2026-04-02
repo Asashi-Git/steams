@@ -143,6 +143,12 @@ require_once __DIR__ . '/views/layout/header.php';
                                 <?= htmlspecialchars($game['title']) ?>
                             </h5>
 
+                            <p class="card-text small mb-1">
+                                <span class="badge bg-danger">
+                                    ♥ <?= (int)$game['like_count'] ?> like<?= $game['like_count'] != 1 ? 's' : '' ?>
+                                </span>
+                            </p>
+
                             <?php if ($game['review_count'] > 0): ?>
                                 <p class="card-text small mb-0">
                                     Community score:
