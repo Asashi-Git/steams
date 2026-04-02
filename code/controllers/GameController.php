@@ -56,5 +56,23 @@ class GameController
         $stmt->execute([':id_game' => $gameId]);
         return $stmt->fetchAll();
     }
-}
+    public function getLikeCount(int $idGame): int
+    {
+        $db   = Database::getInstance();
+        $stmt = $db->prepare("SELECT COUNT(*) FROM likes WHERE id_game = :id_game");
+        $stmt->execute([':id_game' => $idGame]);
+        return (int)$stmt->fetchColumn();
+    }
 
+    public function userHasLiked(int $idGame, int $idUser): bool
+    {
+        $db   = Database::getInstance();
+        $stmt = $db->prepare("
+            SELECT 1 FROM likes
+            WHERE id_game = :id_game AND id_user = :id_user
+        ");
+        $stmt->execute([':id_game' => $idGame, ':id_user' => $idUser]);
+        return (bool)$stmt->fetch();
+    }
+
+}

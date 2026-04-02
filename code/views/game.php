@@ -18,7 +18,7 @@
 
 <div class="row mt-4">
 
-    {{-- LEFT COLUMN: game info --}}
+    <?php /* LEFT COLUMN: game info */ ?>
     <div class="col-md-4 text-center">
         <img
             src="<?= htmlspecialchars($game['cover_image'] ?? '') ?>"
@@ -27,14 +27,14 @@
         >
 
         <button
-            class="btn btn-outline-danger like-btn"
+            class="btn <?= $userLiked ? 'btn-danger' : 'btn-outline-danger' ?> like-btn"
             data-game-id="<?= (int)$game['id_game'] ?>">
-            Like this game
+            <?= $userLiked ? 'Liked' : 'Like this game' ?> 
         </button>
-        <span class="like-counter ms-2">0</span>
+        <span class="like-counter ms-2"><?= $likeCount ?></span>
     </div>
 
-    {{-- RIGHT COLUMN: details --}}
+    <?php /* Right COLUMN: details */ ?>
     <div class="col-md-8">
 
         <h1 class="fw-bold"><?= htmlspecialchars($game['title']) ?></h1>
@@ -51,7 +51,7 @@
 
 <hr class="my-5">
 
-{{-- REVIEWS SECTION --}}
+<?php /* REVIEWS SECTION */ ?>
 <div class="row">
     <div class="col-12">
 
@@ -74,7 +74,7 @@
                         </div>
 
                         <p class="text-muted small mb-2">
-                            By <strong><?= htmlspecialchars($review['pseudo'] ?? 'Anonymous') ?></strong>
+                            By <strong><?= htmlspecialchars($review['username'] ?? 'Anonymous') ?></strong>
                         </p>
 
                         <p class="card-text">
@@ -91,7 +91,7 @@
 
 <hr class="my-5">
 
-{{-- WRITE / SHOW USER REVIEW --}}
+<?php /* WRITE / SHOW USER REVIEW */ ?>
 <div class="row">
     <div class="col-md-8 offset-md-2">
 

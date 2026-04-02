@@ -24,12 +24,24 @@ if ($game === false) {
 // --- Load all reviews for this game
 $reviews = $controller->getReviews($game['id_game']);
 
+// --- Like count and user like state
+$likeCount = $controller->getLikeCount($game['id_game']);
+
+$userLiked = false;
+if (isset($_SESSION['user'])) {
+    $userLiked = $controller->userHasLiked(
+        $game['id_game'],
+        (int)$_SESSION['user']['id_user']
+    );
+}
+
+
 // --- Check if the connected user already posted a review
 $userReview = null;
 
 if (isset($_SESSION['user'])) {
     foreach ($reviews as $review) {
-        if ((int)$review['id_user'] === (int)$_SESSION['user']['id_user']) {
+        if ((int)$review['id_user'] === (int)$_SESSION['user']['id']) {
             $userReview = $review;
             break;
         }
