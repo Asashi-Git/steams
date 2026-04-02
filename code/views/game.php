@@ -118,7 +118,7 @@
                 </div>
             </div>
 
-        <?php else: ?>
+        <?php elseif ((int)$_SESSION['user']['id_role'] === 1 || (int)$_SESSION['user']['id_role'] === 2): ?>
 
             <h3 class="mb-3">Write your review</h3>
 
@@ -167,8 +167,13 @@
 
             </form>
 
+        <?php else: ?>
+
+          <div class="alert alert-warning">
+              Your account does not have reviewer privileges. Contact an admin to request access.
+          </div>
+
         <?php endif; ?>
 
     </div>
 </div>
-

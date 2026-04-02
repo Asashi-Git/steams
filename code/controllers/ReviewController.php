@@ -16,6 +16,16 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
+// --- Guard: only reviewers (role 2) and admins (role 1) can post reviews
+$userRole = (int) $_SESSION['user']['id_role'];
+
+if ($userRole !== 1 && $userRole !== 2) {
+    $_SESSION['form_errors'] = ["You do not have permission to write a review."];
+    header("Location: ../game.php?rawg_id=" . ($_POST['rawg_id'] ?? ''));
+    exit;
+}
+
+
 // --- Collect and sanitize inputs
 $idGame   = isset($_POST['id_game'])  ? (int)   $_POST['id_game']           : 0;
 $title    = isset($_POST['title'])    ? trim($_POST['title'])                : '';
@@ -93,4 +103,3 @@ try {
 // We need the rawg_id to rebuild the URL — store it in the form as a hidden field
 header("Location: ../game.php?rawg_id=" . ($_POST['rawg_id'] ?? ''));
 exit;
-
