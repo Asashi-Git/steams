@@ -4,80 +4,49 @@
 
 ```bash
 .
-├── code
+├── api.php
+├── auth.php
+├── config
 │   ├── api.php
-│   ├── auth.php
-│   ├── config
-│   │   ├── api.php
-│   │   └── database.php
-│   ├── controllers
-│   │   ├── AuthController.php
-│   │   ├── DashboardController.php
-│   │   ├── GameController.php
-│   │   ├── LikeController.php
-│   │   └── ReviewController.php
-│   ├── dashboard.php
-│   ├── game.php
-│   ├── index.php
-│   ├── models
-│   │   ├── Database.php
-│   │   ├── GameModel.php
-│   │   └── UserModel.php
-│   ├── public
-│   │   ├── css
-│   │   │   └── style.css
-│   │   └── js
-│   │       └── likes.js
-│   ├── README.md
-│   ├── services
-│   │   └── RawgService.php
-│   ├── sources
-│   ├── sql
-│   │   ├── steams_db.sql
-│   │   └── steams.sql.old
-│   ├── templates
-│   └── views
-│       ├── admin
-│       │   └── critiques.php
-│       ├── auth
-│       │   ├── login.php
-│       │   └── register.php
-│       ├── critiques
-│       │   └── listing.php
-│       ├── dashboard
-│       │   ├── admin.php
-│       │   ├── critic.php
-│       │   └── index.php
-│       ├── game.php
-│       └── layout
-│           ├── footer.php
-│           └── header.php
-├── configurations
-│   ├── apache
-│   │   └── README.md
-│   ├── mariadb
-│   │   └── README.md
-│   ├── nginx
-│   │   └── README.md
-│   └── README.md
-├── git-commands
-│   └── README.md
-├── projet_btc_revieweo.pdf
+│   └── database.php
+├── controllers
+│   ├── AuthController.php
+│   ├── DashboardController.php
+│   ├── GameController.php
+│   ├── LikeController.php
+│   └── ReviewController.php
+├── dashboard.php
+├── game.php
+├── index.php
+├── models
+│   ├── Database.php
+│   ├── GameModel.php
+│   └── UserModel.php
+├── public
+│   ├── css
+│   └── js
+│       └── likes.js
 ├── README.md
-├── scripts
-│   └── README.md
-└── steams-documentations
-    ├── apache
-    │   └── README.md
-    ├── mariadb
-    │   ├── README.md
-    │   ├── screenshot_2026-03-31_19-02-25.png
-    │   └── screenshot_2026-03-31_19-02-56.png
-    ├── nginx
-    │   └── README.md
-    └── README.md
+├── services
+│   └── RawgService.php
+├── sources
+├── sql
+│   ├── steams_db.sql
+│   └── steams.sql.old
+├── templates
+└── views
+    ├── auth
+    │   ├── login.php
+    │   └── register.php
+    ├── dashboard
+    │   ├── admin.php
+    │   └── critic.php
+    ├── game.php
+    └── layout
+        ├── footer.php
+        └── header.php
 
-28 directories, 45 files
+15 directories, 27 files
 ```
 
 ## Organisation
