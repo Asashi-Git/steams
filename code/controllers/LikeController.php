@@ -46,4 +46,3 @@ $stmt->execute([':g' => $idGame]);
 $count = (int)$stmt->fetchColumn();
 
 echo json_encode(['liked' => $liked, 'count' => $count]);
-
