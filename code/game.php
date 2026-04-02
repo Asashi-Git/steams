@@ -31,7 +31,7 @@ $userLiked = false;
 if (isset($_SESSION['user'])) {
     $userLiked = $controller->userHasLiked(
         $game['id_game'],
-        (int)$_SESSION['user']['id_user']
+        (int)$_SESSION['user']['id']
     );
 }
 
