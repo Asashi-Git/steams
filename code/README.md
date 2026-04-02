@@ -1,5 +1,50 @@
 # Revieweo — Project Documentation
 
+```shell
+.
+├── api.php
+├── auth.php
+├── config
+│   ├── api.php
+│   └── database.php
+├── controllers
+│   ├── AuthController.php
+│   ├── DashboardController.php
+│   ├── GameController.php
+│   ├── LikeController.php
+│   └── ReviewController.php
+├── dashboard.php
+├── game.php
+├── index.php
+├── models
+│   ├── Database.php
+│   ├── GameModel.php
+│   └── UserModel.php
+├── public
+│   ├── css
+│   └── js
+│       └── likes.js
+├── README.md
+├── services
+│   └── RawgService.php
+├── sources
+├── sql
+│   ├── steams_db.sql
+│   └── steams.sql.old
+├── templates
+└── views
+    ├── auth
+    │   ├── login.php
+    │   └── register.php
+    ├── dashboard
+    │   ├── admin.php
+    │   └── critic.php
+    ├── game.php
+    └── layout
+        ├── footer.php
+        └── header.php
+```
+
 ## Overview
 
 Revieweo is a web application that allows users to search for video games, write reviews, and interact with other users through likes. The project follows a structured MVC-like architecture using PHP, with integration of an external API (RAWG) for game data.
