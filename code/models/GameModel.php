@@ -70,14 +70,13 @@ class GameModel
         $stmt = $this->db->query("
             SELECT
                 g.*,
-                ROUND(AVG(r.note), 1)  AS avg_score,
-                COUNT(r.id_critique)   AS review_count
+                ROUND(AVG(r.notation), 1)  AS avg_score,
+                COUNT(r.id_review)   AS review_count
             FROM games g
-            LEFT JOIN critiques r ON r.id_game = g.id_game
+            LEFT JOIN reviews r ON r.id_game = g.id_game
             GROUP BY g.id_game
             ORDER BY g.title ASC
         ");
         return $stmt->fetchAll();
     }
 }
-
